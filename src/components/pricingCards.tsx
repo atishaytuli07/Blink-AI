@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 
 const PricingCards = () => {
   return (
-    <div className="relative min-h-screen w-full bg-gradient-to-b from-blue-300 to-blue-200 flex flex-col items-center justify-center px-4 py-16">
+    <div className="relative w-full bg-gradient-to-b from-blue-300 to-blue-200 flex flex-col items-center justify-center px-4 py-16">
       {/* Heading Section */}
       <div className="text-center mb-12">
         <h2 className="text-5xl font-bold text-white mb-4">Flexible pricing</h2>

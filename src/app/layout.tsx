@@ -36,7 +36,8 @@ const geistMono = Geist_Mono({
 // Metadata
 export const metadata: Metadata = {
   title: "Blink AI - Best AI PDF Summarizer & Document Analysis Tool",
-  description: "Transform any PDF into detailed, accurate summaries with Blink AI. Advanced AI-powered PDF analysis, instant summaries, and key insights extraction. Try our free PDF summarizer today.",
+  description:
+    "Transform any PDF into detailed, accurate summaries with Blink AI. Advanced AI-powered PDF analysis, instant summaries, and key insights extraction. Try our free PDF summarizer today.",
   keywords: [
     "AI PDF summarizer",
     "PDF summary tool",
@@ -61,24 +62,23 @@ export const metadata: Metadata = {
     "summarize PDFs online",
     "markdown export summary",
     "Hinglish",
-    "Blink AI"
+    "Blink AI",
   ],
   icons: {
     icon: "./eyes.gif",
   },
   authors: [{ name: "Blink AI", url: "https://blinkai.app" }],
-  metadataBase: new URL("https://blinkai.app"),
-  themeColor: "#ff6b00",
   openGraph: {
     title: "Blink AI - Advanced AI PDF Summarizer & Analysis Tool",
-    description: "Get instant, accurate PDF summaries powered by cutting-edge AI. Perfect for professionals, researchers, and students. Fast, secure, and incredibly accurate.",
+    description:
+      "Get instant, accurate PDF summaries powered by cutting-edge AI. Perfect for professionals, researchers, and students. Fast, secure, and incredibly accurate.",
     url: "https://blinkai.app",
     siteName: "Blink AI",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
-        height: 630,
+        height: 640,
         alt: "Blink AI - Professional PDF Summarizer",
       },
     ],
@@ -88,7 +88,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Blink AI - Smart PDF Summarizer & Analysis Tool",
-    description: "Transform PDFs into concise, accurate summaries instantly. Powered by advanced AI for perfect results every time.",
+    description:
+      "Transform PDFs into concise, accurate summaries instantly. Powered by advanced AI for perfect results every time.",
     images: ["/og-image.png"],
     creator: "@BlinkAI",
   },
@@ -98,14 +99,11 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
-  },
-  verification: {
-    google: "your-google-verification-code",
-  },
+  }
 };
 
 export default function RootLayout({
@@ -124,11 +122,11 @@ export default function RootLayout({
           ${geistMono.variable}
         `}
       >
-        <div className="relative flex flex-col min-h-screen">
-<Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
-</div>
+        <div className="relative flex flex-col min-h-screen bg-gradient-to-b from-blue-400 via-blue-300 to-blue-200">
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
