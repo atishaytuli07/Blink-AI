@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
+    darkMode: ["class"],
+    content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -28,6 +29,14 @@ module.exports = {
   			mono: [
   				'var(--font-geist-mono)',
   				'monospace'
+  			],
+  			br: [
+  				'br',
+  				'sans-serif'
+  			],
+  			bm: [
+  				'bm',
+  				'sans-serif'
   			]
   		},
   		borderRadius: {
@@ -76,13 +85,18 @@ module.exports = {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			},
-			  blue: {
-				light: '#8AB4E8',
-				DEFAULT: '#78A6E1',
-				dark: '#6798D4'
-			}
+  			sidebar: {
+  				DEFAULT: 'hsl(var(--sidebar-background))',
+  				foreground: 'hsl(var(--sidebar-foreground))',
+  				primary: 'hsl(var(--sidebar-primary))',
+  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+  				accent: 'hsl(var(--sidebar-accent))',
+  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+  				border: 'hsl(var(--sidebar-border))',
+  				ring: 'hsl(var(--sidebar-ring))'
+  			}
   		}
   	}
   },
   plugins: [import("tailwindcss-animate")],
-}
+};

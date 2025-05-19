@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { Roboto, Inter, Poppins, Source_Sans_3 } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -33,7 +34,23 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
 });
 
-// Metadata
+// const sono = localFont({
+//   src: [
+//     {
+//       path: "/OTSono-Medium.woff2",
+//       weight: "400",
+//       style: "normal",
+//     },
+//     {
+//       path: "/OTSono-Medium.woff2",
+//       weight: "500",
+//       style: "normal",
+//     },
+//   ],
+//   variable: "--font-sono",
+//   display: "swap",
+// });
+
 export const metadata: Metadata = {
   title: "Blink AI - Best AI PDF Summarizer & Document Analysis Tool",
   description:
@@ -112,6 +129,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+     <ClerkProvider
+      appearance={{
+        elements: {
+          formButtonPrimary: "bg-black hover:bg-gray-800 text-white",
+          footerActionLink: "text-black hover:text-gray-600",
+        },
+      }}
+    >
     <html lang="en">
       <body
         className={`
@@ -122,12 +147,12 @@ export default function RootLayout({
           ${geistMono.variable}
         `}
       >
-        <div className="relative flex flex-col min-h-screen bg-gradient-to-b from-blue-400 via-blue-300 to-blue-200">
-          <Header />
+        <div className="relative flex flex-col min-h-screen bg-[#F5F5EB]">
           <main className="flex-1">{children}</main>
           <Footer />
         </div>
       </body>
     </html>
+    </ClerkProvider>
   );
 }
