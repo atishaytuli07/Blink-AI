@@ -40,7 +40,7 @@ export function CustomerMarquee() {
   }, [])
 
   return (
-    <div className="w-full bg-[#D2D2C8] py-6 ">
+    <div className="w-full bg-[#e1daca] py-6">
       <div className="flex flex-col md:flex-row items-center md:items-start">
         {/* Fixed heading - 40% width on desktop */}
         <div className="w-full md:w-[40%] px-6 md:px-12 mb-6 md:mb-0">

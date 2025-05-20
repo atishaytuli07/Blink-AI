@@ -149,7 +149,6 @@ export default function RootLayout({
       >
         <div className="relative flex flex-col min-h-screen bg-[#F5F5EB]">
           <main className="flex-1">{children}</main>
-          <Footer />
         </div>
       </body>
     </html>

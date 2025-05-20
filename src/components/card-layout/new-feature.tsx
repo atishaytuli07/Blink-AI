@@ -1,16 +1,17 @@
+'use client'
 import React, { useRef } from "react"
-import { Card } from "./ui/card"
-import AngularBracket from "./icons/AngularBracket"
-import Sparkle from "./icons/Sparkle"
-import DiscordIcon from "./icons/DiscordIcon"
 import { motion, useScroll, useTransform, useInView } from "framer-motion"
-import CircularButton from "./CircularButton"
+import CircularButton from "../circularbutton"
+import { Linkedin } from "lucide-react"
+import Sparkle from "../icons/sparke"
+import AngularBracket from "../icons/angular"
+import { TextMarquee } from "../text-marquee"
 
 const FeaturesSection = () => {
   // Define a set of colors from our theme that work well for pills
   const pillColors = [
-    "bg-blue-light",
-    "bg-yellow-mango",
+    "bg-blue-400",
+    "bg-[#CCFF00]",
     "bg-[#77C6B3]"
   ]
 
@@ -137,18 +138,19 @@ const FeaturesSection = () => {
   return (
     <section
       ref={sectionRef}
-      className='bg-black relative h-[300vh] flex flex-col'
+      className='bg-white relative h-[300vh] flex flex-col'
     >
+            <TextMarquee />
       {/* Sticky container to maintain position during scroll */}
       <div className='sticky top-0 h-screen flex items-center overflow-hidden'>
         {/* Title with fixed position */}
         <motion.div
           style={{ x: xPosition }}
-          className='w-[300vh] h-screen flex justify-around items-center absolute left-0 p-16 text-white'
+          className='w-[300vh] h-screen flex justify-around items-center absolute left-0 p-16 text-black'
         >
           <div className=''>
-            <span className='inline-block text-orange font-bold text-9xl rotate-[30deg]'>
-              <AngularBracket />
+            <span className='inline-block text-orange-400 font-bold text-9xl rotate-[30deg]'>
+             <AngularBracket />
             </span>
             <h2 className='text-7xl lg:text-9xl font-bold leading-tight'>
               What's in
@@ -243,7 +245,7 @@ const FeaturesSection = () => {
                 </motion.div>
                 <motion.div variants={gridItemVariants} className='flex items-center justify-center'>
                   <div className='relative w-20 h-20 rounded-full bg-[#5865F2] flex items-center justify-center'>
-                    <DiscordIcon className='text-white w-20 h-20' />
+                    <Linkedin className='text-white w-20 h-20' />
                   </div>
                 </motion.div>
                 <motion.div variants={gridItemVariants} className='flex items-center justify-center'>
@@ -388,7 +390,7 @@ const FeaturesSection = () => {
             </div>
           </motion.div>
 
-          <CircularButton variant='blue' foreground='white' size="lg" />
+          <CircularButton variant='yellow' foreground='black' size="lg" />
         </motion.div>
       </div>
     </section>
