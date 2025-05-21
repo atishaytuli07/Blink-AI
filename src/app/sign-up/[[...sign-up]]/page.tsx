@@ -1,5 +1,5 @@
-import { SignUp } from "@clerk/nextjs"
-import Link from "next/link"
+import { SignUp } from "@clerk/nextjs";
+import Link from "next/link";
 
 export default function SignUpPage() {
   return (
@@ -10,7 +10,7 @@ export default function SignUpPage() {
             elements: {
               rootBox: "mx-auto",
               card: "bg-white shadow-lg rounded-xl p-6",
-              headerTitle: "text-2xl font-bold text-center",
+              headerTitle: "text-2xl font-bold font-bm text-center",
               headerSubtitle: "text-gray-500 text-center",
               formButtonPrimary: "bg-black hover:bg-gray-800 text-white",
               footerActionLink: "text-black hover:text-gray-600",
@@ -25,12 +25,15 @@ export default function SignUpPage() {
         <div className="mt-6 text-center">
           <p className="text-gray-600">
             Already have an account?{" "}
-            <Link href="/sign-in" className="text-black font-medium hover:underline">
+            <Link
+              href="/sign-in"
+              className="text-black font-medium hover:underline"
+            >
               Sign in
             </Link>
           </p>
         </div>
       </div>
     </div>
-  )
+  );
 }

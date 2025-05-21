@@ -11,13 +11,13 @@ const userActivities = [
   "Priya summarized 5 documents",
   "Alex upgraded to Premium",
   "Maya shared summary with team",
-  "David processed 10 PDFs",
+  "Gurjant processed 10 PDFs",
   "Sarah loves the quick summaries",
   "Raj converted presentation to notes",
   "Emma simplified complex document",
   "Michael recommended to colleagues",
-  "Neha generated report in seconds",
-  "Tom saved research findings",
+  "Atishay generated report in seconds",
+  "Ravi saved research findings",
   "Aisha summarized meeting notes",
 ]
 
@@ -65,7 +65,7 @@ export function TextMarquee() {
             {userActivities.map((activity, index) => (
               <div key={index} className="flex items-center whitespace-nowrap mx-4">
                 <div className="w-2 h-2 bg-black rounded-full mr-2"></div>
-                <span className="text-sm font-medium">{activity}</span>
+                <span className="text-base font-medium">{activity}</span>
               </div>
             ))}
           </div>

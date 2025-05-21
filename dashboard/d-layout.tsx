@@ -1,8 +1,6 @@
-"use client"
-
-import type React from "react"
-
-import { useState, useEffect } from "react"
+"use client";
+import type React from "react";
+import { useState, useEffect } from "react";
 import {
   SidebarProvider,
   Sidebar,
@@ -14,35 +12,46 @@ import {
   SidebarMenuButton,
   SidebarTrigger,
   SidebarInset,
-} from "@/components/ui/sidebar"
-import { UserButton } from "@clerk/nextjs"
-import { FileText, Home, FolderPlus, Upload, Settings, LogOut } from "lucide-react"
-import Link from "next/link"
-import { useClerk } from "@clerk/nextjs"
-import { useRouter, usePathname } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { useMediaQuery } from "@/hooks/use-mobile"
+} from "@/components/ui/sidebar";
+import { UserButton } from "@clerk/nextjs";
+import {
+  FileText,
+  Home,
+  FolderPlus,
+  Upload,
+  Settings,
+  LogOut,
+} from "lucide-react";
+import Link from "next/link";
+import { useClerk } from "@clerk/nextjs";
+import { useRouter, usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { useMediaQuery } from "@/hooks/use-mobile";
 
-export default function DashboardLayout({ children }: { children: React.ReactNode }) {
-  const isMobile = useMediaQuery("(max-width: 768px)")
-  const [open, setOpen] = useState(!isMobile)
-  const { signOut } = useClerk()
-  const router = useRouter()
-  const pathname = usePathname()
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  const [open, setOpen] = useState(!isMobile);
+  const { signOut } = useClerk();
+  const router = useRouter();
+  const pathname = usePathname();
 
   // Update sidebar state when screen size changes
   useEffect(() => {
-    setOpen(!isMobile)
-  }, [isMobile])
+    setOpen(!isMobile);
+  }, [isMobile]);
 
   const handleSignOut = async () => {
-    await signOut()
-    router.push("/")
-  }
+    await signOut();
+    router.push("/");
+  };
 
   const isActive = (path: string) => {
-    return pathname === path
-  }
+    return pathname === path;
+  };
 
   return (
     <SidebarProvider defaultOpen={open} onOpenChange={setOpen}>
@@ -51,9 +60,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           <SidebarHeader className="p-4">
             <Link href="/" className="flex items-center gap-2">
               <div className="bg-[#CCFF00] rounded-md w-8 h-8 flex items-center justify-center">
-                <span className="text-black font-bold">B</span>
+                <span className="text-black font-bold font-bm">B</span>
               </div>
-              {open && <span className="font-bold text-xl">BLINK AI</span>}
+              {open && (
+                <span className="font-bold font-bm text-xl">BLINK AI</span>
+              )}
             </Link>
           </SidebarHeader>
 
@@ -98,7 +109,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton asChild isActive={isActive("/dashboard/summaries")}>
+                <SidebarMenuButton
+                  asChild
+                  isActive={isActive("/dashboard/summaries")}
+                >
                   <Link href="/dashboard/summaries">
                     <FileText className="h-5 w-5" />
                     {open && <span>My Summaries</span>}
@@ -106,7 +120,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
-                <SidebarMenuButton asChild isActive={isActive("/dashboard/settings")}>
+                <SidebarMenuButton
+                  asChild
+                  isActive={isActive("/dashboard/settings")}
+                >
                   <Link href="/dashboard/settings">
                     <Settings className="h-5 w-5" />
                     {open && <span>Settings</span>}
@@ -117,7 +134,11 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           </SidebarContent>
 
           <SidebarFooter className="mt-auto p-4 border-t border-gray-800">
-            <div className={`flex items-center ${open ? "justify-between" : "justify-center"}`}>
+            <div
+              className={`flex items-center ${
+                open ? "justify-between" : "justify-center"
+              }`}
+            >
               {open ? (
                 <>
                   <div className="flex items-center gap-2">
@@ -148,14 +169,16 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <SidebarTrigger className="mr-2" />
             <div className="flex items-center gap-2">
               <div className="bg-[#CCFF00] rounded-md w-8 h-8 flex items-center justify-center">
-                <span className="text-black font-bold">B</span>
+                <span className="text-black font-bold font-bm">B</span>
               </div>
-              <span className="font-bold">BLINK AI</span>
+              <span className="font-bold font-bm">BLINK AI</span>
             </div>
           </div>
-          <div className="flex-1 overflow-auto p-4 md:p-8 pb-20">{children}</div>
+          <div className="flex-1 overflow-auto p-4 md:p-8 pb-20">
+            {children}
+          </div>
         </SidebarInset>
       </div>
     </SidebarProvider>
-  )
+  );
 }

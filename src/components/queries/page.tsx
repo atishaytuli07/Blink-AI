@@ -1,67 +1,67 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ChevronDown } from "lucide-react"
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 type FaqItem = {
-  question: string
-  answer: string
-}
+  question: string;
+  answer: string;
+};
 
 const faqData: FaqItem[] = [
   {
-    question: "Custom model for insights + creativity data (Effies + Cannes + more)",
+    question: "What is the custom model trained on?",
     answer:
-      "Our custom model analyzes award-winning campaigns from Effies, Cannes Lions, and other industry benchmarks to extract patterns and insights. This data powers our AI to generate creative strategies that have a higher likelihood of success based on historical performance.",
+      "It’s trained on award-winning campaigns like Effies and Cannes to uncover patterns that inspire smarter, high-performing ideas.",
   },
   {
-    question: "BYOD + Category + Consumer Data (open source + syndicated)",
+    question: "Can I use my own data?",
     answer:
-      "Bring Your Own Data (BYOD) capability allows you to integrate your proprietary data with our platform. We also incorporate category-specific trends and consumer behavior data from both open source and syndicated research to provide comprehensive market context for your strategies.",
+      "Yes! You can bring your own data (BYOD), and we blend it with category trends and consumer insights for deeper context.",
   },
   {
-    question: "Our proprietary algorithm that creates new recipes",
+    question: "How does the AI generate strategies?",
     answer:
-      "Unlike generic AI tools, our algorithm specifically combines successful marketing patterns with your unique brand parameters to generate novel strategic approaches we call 'recipes.' These recipes are tailored combinations of messaging, channel strategy, and creative direction designed to achieve your specific marketing objectives.",
+      "Our proprietary algorithm creates tailored 'recipes' — unique mixes of messages, channels, and creative angles just for your brand.",
   },
   {
-    question: "Nuanced refinement by experts (think Harvey AI for Marketing)",
+    question: "Is there expert input involved?",
     answer:
-      "Our platform doesn't stop at algorithmic outputs. Every generated strategy is reviewed and refined by our team of marketing experts who bring human creativity and practical experience to the process. This human-in-the-loop approach ensures that all recommendations are not just data-driven but also practically implementable.",
+      "Absolutely. Marketing experts review and fine-tune every AI suggestion so it’s both smart and usable — like Harvey AI, but for marketers.",
   },
-]
+];
 
 export default function QueriesPage() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Main Section */}
-      <section className="container mx-auto px-4 py-12 md:py-24 relative overflow-hidden">
-        <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-24 items-start">
-          {/* Left Column - Heading */}
-          <div className="w-full md:w-5/12">
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-black leading-none">
-              NOT JUST A
+    <div className=" bg-white">
+      <section className="max-w-7xl mx-auto px-4 py-12 md:py-24 relative overflow-hidden">
+        <div className="relative z-10 flex flex-col gap-8 md:gap-24 items-start">
+          <div className="w-full">
+            <h1 className="text-5xl font-bm font-semibold text-black leading-none">
+              We are Not Just a Simple
               <br />
-              WRAPPER
+              PDF Summarizer.
             </h1>
           </div>
 
-          {/* Right Column - FAQs */}
-          <div className="w-full md:w-7/12 pt-12">
-            <div className="space-y-8">
+          <div className="w-full flex">
+            <div className="hidden md:block w-1/2"></div>
+            <div className="w-full md:w-1/2 space-y-8">
               {faqData.map((item, index) => (
-                <div key={index} className="pb-6 border-b border-gray-200">
+                <div key={index} className="pb-4 border-b border-gray-200">
                   <button
                     className="flex justify-between items-center w-full text-left"
                     onClick={() => toggleFaq(index)}
                   >
-                    <p className="text-xl text-black font-normal">{item.question}</p>
+                    <p className="text-base text-black font-normal">
+                      {item.question}
+                    </p>
                     <ChevronDown
                       className={`h-5 w-5 ml-2 flex-shrink-0 transition-transform ${
                         openIndex === index ? "transform rotate-180" : ""
@@ -79,12 +79,11 @@ export default function QueriesPage() {
           </div>
         </div>
 
-        {/* Background Shapes */}
         <div className="absolute inset-0 z-0 opacity-10">
           <div className="absolute top-0 right-0 w-3/4 h-3/4 bg-pink-100 rounded-full transform translate-x-1/4 -translate-y-1/4"></div>
           <div className="absolute bottom-0 left-0 w-2/3 h-2/3 bg-pink-100 rounded-full transform -translate-x-1/4 translate-y-1/4"></div>
         </div>
       </section>
     </div>
-  )
+  );
 }

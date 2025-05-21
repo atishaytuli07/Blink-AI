@@ -1,14 +1,15 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { AudioWaveformIcon, Star } from "lucide-react"
-import Header from "@/components/common/header"
-import { motion } from "framer-motion"
-import { useMediaQuery } from "@/hooks/use-mobile"
+import Image from "next/image";
+import { AudioWaveformIcon, Star } from "lucide-react";
+import { Zap, FileText, BookOpen, Brain } from "lucide-react";
+import Header from "@/components/common/header";
+import { motion } from "framer-motion";
+import { useMediaQuery } from "@/hooks/use-mobile";
 
 export default function Home() {
   // Check for tablet screen size
-  const isTablet = useMediaQuery("(min-width: 768px) and (max-width: 1023px)")
+  const isTablet = useMediaQuery("(min-width: 768px) and (max-width: 1023px)");
 
   // Animation variants for floating elements
   const containerVariants = {
@@ -20,7 +21,7 @@ export default function Home() {
         delayChildren: 0.3,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, x: 0 },
@@ -33,10 +34,10 @@ export default function Home() {
         damping: 10,
       },
     },
-  }
+  };
 
   return (
-    <div className="h-screen overflow-x-hidden bg-[#F5F5EB] flex flex-col">
+    <div className="h-screen overflow-hidden bg-[#F5F5EB] flex flex-col">
       <div className="mt-2 md:mt-4 container mx-auto">
         <Header />
       </div>
@@ -81,7 +82,9 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="font-medium">Clear</div>
-                  <div className="text-xs text-gray-500">Clear and Simple</div>
+                  <div className="text-xs text-gray-500">
+                    Easy to understand
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -98,7 +101,9 @@ export default function Home() {
                 </div>
                 <div>
                   <div className="font-medium">Smarter</div>
-                  <div className="text-xs text-gray-500">Smarter summaries</div>
+                  <div className="text-xs text-gray-500">
+                    AI-powered & accurate
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -110,7 +115,7 @@ export default function Home() {
               transition={{ delay: 0.7, duration: 0.5 }}
             >
               <AudioWaveformIcon size={13} />
-              <span className="text-xs font-medium">Just takes 0.02 sec</span>
+              <span className="text-xs font-medium">Only 0.02 sec 🚀</span>
             </motion.div>
           </motion.div>
         </div>
@@ -146,7 +151,10 @@ export default function Home() {
             </div>
 
             {/* Clear Card - Left Side */}
-            <motion.div className="absolute left-[5%] top-[80px]" variants={itemVariants} custom={{ xOffset: -50 }}>
+            <motion.div
+              className="absolute left-[5%] top-[80px]"
+              custom={{ xOffset: -50 }}
+            >
               <div className="bg-white rounded-xl px-4 py-3 shadow-lg transition-transform hover:scale-105">
                 <div className="flex items-center">
                   <div className="w-10 h-10 rounded-full bg-[#a8e0f0] mr-3 overflow-hidden flex items-center justify-center">
@@ -154,22 +162,30 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="font-medium">Clear</div>
-                    <div className="text-xs text-gray-500">Clear and Simple</div>
+                    <div className="text-xs text-gray-500">
+                      Easy to understand
+                    </div>
                   </div>
                 </div>
               </div>
             </motion.div>
 
             {/* Just takes 0.02 sec Badge */}
-            <motion.div className="absolute left-[10%] top-[180px]" variants={itemVariants} custom={{ xOffset: -30 }}>
+            <motion.div
+              className="absolute left-[10%] top-[180px]"
+              custom={{ xOffset: -30 }}
+            >
               <div className="bg-[#a8e0f0] rounded-full px-3 py-1 shadow-md flex items-center gap-1">
                 <AudioWaveformIcon size={13} />
-                <span className="text-xs font-medium">Just takes 0.02 sec</span>
+                <span className="text-xs font-medium">Only 0.02 sec 🚀</span>
               </div>
             </motion.div>
 
             {/* PDF to Summary Card */}
-            <motion.div className="absolute left-[5%] top-[230px]" variants={itemVariants} custom={{ xOffset: -50 }}>
+            <motion.div
+              className="absolute left-[5%] top-[230px]"
+              custom={{ xOffset: -50 }}
+            >
               <div className="bg-white rounded-xl p-4 w-56 shadow-lg transition-transform hover:scale-105">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center">
@@ -191,10 +207,13 @@ export default function Home() {
                       <line x1="16" y1="17" x2="8" y2="17"></line>
                       <polyline points="10 9 9 9 8 9"></polyline>
                     </svg>
-                    <span className="text-xs font-medium">PDF Summary</span>
+                    <span className="text-xs font-medium"> PDF Summary</span>
                   </div>
-                  <div className="bg-yellow-300 text-xs px-2 py-0.5 rounded-full">Blink AI</div>
+                  <div className="bg-yellow-300 text-xs px-2 py-0.5 rounded-full">
+                    Blink AI
+                  </div>
                 </div>
+
                 <div className="flex items-center justify-between">
                   <div className="text-2xl font-bold">PDF</div>
                   <div className="px-2">
@@ -215,96 +234,49 @@ export default function Home() {
                   </div>
                   <div className="text-2xl font-bold">SMRY</div>
                 </div>
+
                 <div className="flex justify-between text-xs text-gray-500 mt-1">
                   <div>
                     <div>10:05</div>
-                    <div>Very Long</div>
+                    <div>Full PDF</div>
                   </div>
                   <div className="text-center">
                     <div>0.02s</div>
                   </div>
                   <div className="text-right">
                     <div>10:05</div>
-                    <div>Clear & Short</div>
+                    <div>Smart Summary</div>
                   </div>
                 </div>
+
                 <div className="bg-[#CCFF00] text-center py-2 rounded-md text-sm font-medium mt-3 cursor-pointer hover:bg-[#b8e600] transition-colors">
-                  Generate Now
+                  Try It Now
                 </div>
               </div>
             </motion.div>
 
-            {/* Easiness Level Slider */}
-            <motion.div className="absolute right-[5%] top-[80px]" variants={itemVariants} custom={{ xOffset: 50 }}>
+            {/* summary Level Slider */}
+            <motion.div
+              className="absolute right-[5%] top-[80px]"
+              custom={{ xOffset: 50 }}
+            >
               <div className="bg-white rounded-xl p-4 w-56 shadow-lg transition-transform hover:scale-105">
-                <div className="text-sm font-medium mb-3">Set the easiness level</div>
+                <div className="text-sm font-medium mb-3">
+                  Set the summary level
+                </div>
                 <div className="flex justify-center mb-4">
                   <div className="flex space-x-2">
-                    <div className="w-8 h-8 rounded-full bg-[#a8e0f0] flex items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                      </svg>
+                    <div className="w-10 h-10 rounded-full bg-[#a8e0f0] flex items-center justify-center">
+                      <Zap className="w-4 h-4 text-black" />
                     </div>
-                    <div className="w-8 h-8 rounded-full bg-[#f8c3b9] flex items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <rect x="1" y="3" width="15" height="13"></rect>
-                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
-                        <circle cx="5.5" cy="18.5" r="2.5"></circle>
-                        <circle cx="18.5" cy="18.5" r="2.5"></circle>
-                      </svg>
+                    <div className="w-10 h-10 rounded-full bg-[#f8c3b9] flex items-center justify-center">
+                      <FileText className="w-4 h-4 text-black" />
                     </div>
-                    <div className="w-8 h-8 rounded-full bg-[#d4c5f9] flex items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                      </svg>
+                    <div className="w-10 h-10 rounded-full bg-[#d4c5f9] flex items-center justify-center">
+                      <BookOpen className="w-4 h-4 text-black" />
                     </div>
-                    <div className="w-8 h-8 rounded-full bg-[#c2e7b9] flex items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="8.5" cy="7" r="4"></circle>
-                        <polyline points="17 11 19 13 23 9"></polyline>
-                      </svg>
+                    <div className="w-10 h-10 rounded-full bg-[#c2e7b9] flex items-center justify-center">
+                      <Brain className="w-4 h-4 text-black" />
                     </div>
                   </div>
                 </div>
@@ -321,22 +293,35 @@ export default function Home() {
             </motion.div>
 
             {/* Smarter Card */}
-            <motion.div className="absolute right-[5%] top-[270px]" variants={itemVariants} custom={{ xOffset: 50 }}>
+            <motion.div
+              className="absolute right-[5%] top-[270px]"
+              custom={{ xOffset: 50 }}
+            >
               <div className="bg-white rounded-xl px-4 py-3 shadow-lg transition-transform hover:scale-105">
                 <div className="flex items-center">
                   <div className="w-10 h-10 rounded-full bg-[#f8c3b9] mr-3 overflow-hidden flex items-center justify-center">
-                    <Image src="/img1.svg" alt="Smarter" width={48} height={48} />
+                    <Image
+                      src="/img1.svg"
+                      alt="Smarter"
+                      width={48}
+                      height={48}
+                    />
                   </div>
                   <div>
                     <div className="font-medium">Smarter</div>
-                    <div className="text-xs text-gray-500">Smarter summaries</div>
+                    <div className="text-xs text-gray-500">
+                      AI-powered & accurate
+                    </div>
                   </div>
                 </div>
               </div>
             </motion.div>
 
             {/* Trusted by section */}
-            <motion.div className="absolute right-[10%] top-[370px]" variants={itemVariants} custom={{ xOffset: 30 }}>
+            <motion.div
+              className="absolute right-[10%] top-[370px]"
+              custom={{ xOffset: 30 }}
+            >
               <div className="bg-white rounded-xl px-6 py-3 shadow-md flex items-center transition-transform hover:scale-105">
                 <div className="flex gap-1 text-zinc-700 items-center">
                   <Star className="h-4 w-4 fill-current" />
@@ -344,7 +329,7 @@ export default function Home() {
                   <Star className="h-4 w-4 fill-current" />
                   <Star className="h-4 w-4 fill-current" />
                   <Star className="h-4 w-4 fill-current stroke-current" />
-                  <div className="text-sm font-semibold ml-1 mr-2">4.7</div>
+                  <div className="text-sm font-bold font-bm ml-1 mr-2">4.7</div>
                   <div className="text-gray-700">|</div>
                   <div className="ml-2 text-gray-700 text-sm">12+ reviews</div>
                 </div>
@@ -384,7 +369,10 @@ export default function Home() {
             </div>
 
             {/* Clear Card - Left Side */}
-            <motion.div className="absolute left-[15%] top-[50px]" variants={itemVariants} custom={{ xOffset: -50 }}>
+            <motion.div
+              className="absolute left-[15%] top-[50px]"
+              custom={{ xOffset: -50 }}
+            >
               <div className="bg-white rounded-xl px-4 py-3 shadow-lg transition-transform hover:scale-105">
                 <div className="flex items-center">
                   <div className="w-10 h-10 rounded-full bg-[#a8e0f0] mr-3 overflow-hidden flex items-center justify-center">
@@ -392,22 +380,30 @@ export default function Home() {
                   </div>
                   <div>
                     <div className="font-medium">Clear</div>
-                    <div className="text-xs text-gray-500">Clear and Simple</div>
+                    <div className="text-xs text-gray-500">
+                      Easy to understand
+                    </div>
                   </div>
                 </div>
               </div>
             </motion.div>
 
             {/* Just takes 0.02 sec Badge */}
-            <motion.div className="absolute left-[25%] top-[150px]" variants={itemVariants} custom={{ xOffset: -30 }}>
+            <motion.div
+              className="absolute left-[25%] top-[150px]"
+              custom={{ xOffset: -30 }}
+            >
               <div className="bg-[#a8e0f0] rounded-full px-3 py-1 shadow-md flex items-center gap-1">
                 <AudioWaveformIcon size={13} />
-                <span className="text-xs font-medium">Just takes 0.02 sec</span>
+                <span className="text-xs font-medium">Only 0.02 sec 🚀</span>
               </div>
             </motion.div>
 
             {/* PDF to Summary Card */}
-            <motion.div className="absolute left-[15%] top-[200px]" variants={itemVariants} custom={{ xOffset: -50 }}>
+            <motion.div
+              className="absolute left-[15%] top-[200px]"
+              custom={{ xOffset: -50 }}
+            >
               <div className="bg-white rounded-xl p-4 w-64 shadow-lg transition-transform hover:scale-105">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center">
@@ -431,7 +427,9 @@ export default function Home() {
                     </svg>
                     <span className="text-xs font-medium">PDF Summary</span>
                   </div>
-                  <div className="bg-yellow-300 text-xs px-2 py-0.5 rounded-full">Blink AI</div>
+                  <div className="bg-yellow-300 text-xs px-2 py-0.5 rounded-full">
+                    Blink AI
+                  </div>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="text-3xl font-bold">PDF</div>
@@ -472,77 +470,28 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Easiness Level Slider */}
-            <motion.div className="absolute right-[15%] top-[100px]" variants={itemVariants} custom={{ xOffset: 50 }}>
+            {/* summary Level Slider */}
+            <motion.div
+              className="absolute right-[15%] top-[100px]"
+              custom={{ xOffset: 50 }}
+            >
               <div className="bg-white rounded-xl p-4 w-64 shadow-lg transition-transform hover:scale-105">
-                <div className="text-sm font-medium mb-3">Set the easiness level</div>
+                <div className="text-sm font-medium mb-3">
+                  Set the summary level
+                </div>
                 <div className="flex justify-center mb-4">
                   <div className="flex space-x-2">
                     <div className="w-10 h-10 rounded-full bg-[#a8e0f0] flex items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                      </svg>
+                      <Zap className="w-4 h-4 text-black" />
                     </div>
                     <div className="w-10 h-10 rounded-full bg-[#f8c3b9] flex items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <rect x="1" y="3" width="15" height="13"></rect>
-                        <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
-                        <circle cx="5.5" cy="18.5" r="2.5"></circle>
-                        <circle cx="18.5" cy="18.5" r="2.5"></circle>
-                      </svg>
+                      <FileText className="w-4 h-4 text-black" />
                     </div>
                     <div className="w-10 h-10 rounded-full bg-[#d4c5f9] flex items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                      </svg>
+                      <BookOpen className="w-4 h-4 text-black" />
                     </div>
                     <div className="w-10 h-10 rounded-full bg-[#c2e7b9] flex items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="8.5" cy="7" r="4"></circle>
-                        <polyline points="17 11 19 13 23 9"></polyline>
-                      </svg>
+                      <Brain className="w-4 h-4 text-black" />
                     </div>
                   </div>
                 </div>
@@ -559,22 +508,35 @@ export default function Home() {
             </motion.div>
 
             {/* Smarter Card */}
-            <motion.div className="absolute right-[15%] top-[270px]" variants={itemVariants} custom={{ xOffset: 50 }}>
+            <motion.div
+              className="absolute right-[15%] top-[270px]"
+              custom={{ xOffset: 50 }}
+            >
               <div className="bg-white rounded-xl px-4 py-3 shadow-lg transition-transform hover:scale-105">
                 <div className="flex items-center">
                   <div className="w-10 h-10 rounded-full bg-[#f8c3b9] mr-3 overflow-hidden flex items-center justify-center">
-                    <Image src="/img1.svg" alt="Smarter" width={48} height={48} />
+                    <Image
+                      src="/img1.svg"
+                      alt="Smarter"
+                      width={48}
+                      height={48}
+                    />
                   </div>
                   <div>
                     <div className="font-medium">Smarter</div>
-                    <div className="text-xs text-gray-500">Smarter summaries</div>
+                    <div className="text-xs text-gray-500">
+                      AI-powered & accurate
+                    </div>
                   </div>
                 </div>
               </div>
             </motion.div>
 
             {/* Trusted by section */}
-            <motion.div className="absolute right-[20%] top-[370px]" variants={itemVariants} custom={{ xOffset: 30 }}>
+            <motion.div
+              className="absolute right-[20%] top-[370px]"
+              custom={{ xOffset: 30 }}
+            >
               <div className="bg-white rounded-xl px-6 py-3 shadow-md flex items-center transition-transform hover:scale-105">
                 <div className="flex gap-1 text-zinc-700 items-center">
                   <Star className="h-4 w-4 fill-current" />
@@ -582,7 +544,7 @@ export default function Home() {
                   <Star className="h-4 w-4 fill-current" />
                   <Star className="h-4 w-4 fill-current" />
                   <Star className="h-4 w-4 fill-current stroke-current" />
-                  <div className="text-sm font-semibold ml-1 mr-2">4.7</div>
+                  <div className="text-sm font-bold font-bm ml-1 mr-2">4.7</div>
                   <div className="text-gray-700">|</div>
                   <div className="ml-2 text-gray-700 text-sm">12+ reviews</div>
                 </div>
@@ -592,5 +554,5 @@ export default function Home() {
         </div>
       </section>
     </div>
-  )
+  );
 }

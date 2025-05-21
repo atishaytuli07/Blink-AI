@@ -4,8 +4,6 @@ import DashboardLayout from "./d-layout"
 import { DashboardShell } from "./d-shell"
 import { DashboardHeader } from "./d-header"
 import { StatsCards } from "./d-cards"
-import { DashboardTabs } from "./d-tabs"
-import { SummaryList } from "./d-summary"
 import { RecentActivity } from "./d-activity"
 
 export default async function DashboardPage() {
@@ -17,36 +15,36 @@ export default async function DashboardPage() {
   }
 
   // Mock data for summaries
-  const summaries = [
-    {
-      id: "1",
-      title: "Business Proposal Q2 2025.pdf",
-      date: "2025-05-15T10:30:00Z",
-      pages: 12,
-      status: "completed",
-    },
-    {
-      id: "2",
-      title: "Financial Report 2024.pdf",
-      date: "2025-05-10T14:20:00Z",
-      pages: 28,
-      status: "completed",
-    },
-    {
-      id: "3",
-      title: "Marketing Strategy.pdf",
-      date: "2025-05-05T09:15:00Z",
-      pages: 18,
-      status: "completed",
-    },
-    {
-      id: "4",
-      title: "Research Paper on AI.pdf",
-      date: "2025-04-28T16:45:00Z",
-      pages: 42,
-      status: "completed",
-    },
-  ]
+  // const summaries = [
+  //   {
+  //     id: "1",
+  //     title: "Business Proposal Q2 2025.pdf",
+  //     date: "2025-05-15T10:30:00Z",
+  //     pages: 12,
+  //     status: "completed",
+  //   },
+  //   {
+  //     id: "2",
+  //     title: "Financial Report 2024.pdf",
+  //     date: "2025-05-10T14:20:00Z",
+  //     pages: 28,
+  //     status: "completed",
+  //   },
+  //   {
+  //     id: "3",
+  //     title: "Marketing Strategy.pdf",
+  //     date: "2025-05-05T09:15:00Z",
+  //     pages: 18,
+  //     status: "completed",
+  //   },
+  //   {
+  //     id: "4",
+  //     title: "Research Paper on AI.pdf",
+  //     date: "2025-04-28T16:45:00Z",
+  //     pages: 42,
+  //     status: "completed",
+  //   },
+  // ]
 
   // Mock data for recent activity
   const recentActivity = [

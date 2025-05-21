@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState, useRef, useCallback, useEffect } from "react"
 import { Upload, FileText, AlertCircle, X, Check, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
