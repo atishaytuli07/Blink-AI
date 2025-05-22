@@ -5,7 +5,7 @@ import { useState, useRef, useCallback, useEffect } from "react"
 import { Upload, FileText, AlertCircle, X, Check, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import { toast } from "@/components/ui/use-toast"
+import { Toast } from "@/components/ui/toast"
 
 type FileStatus = "idle" | "dragging" | "uploading" | "processing" | "success" | "error"
 
@@ -70,9 +70,8 @@ export function UploadDropzone() {
     if (pdfFiles.length === 0) {
       setErrorMessage("Please upload PDF files only")
       setFileStatus("error")
-      toast({
+      Toast({
         title: "Invalid file type",
-        description: "Please upload PDF files only",
         variant: "destructive",
       })
       setTimeout(() => {
@@ -88,9 +87,8 @@ export function UploadDropzone() {
 
     if (validSizeFiles.length < pdfFiles.length) {
       setErrorMessage("Some files exceed the 10MB size limit")
-      toast({
+      Toast({
         title: "File size limit exceeded",
-        description: "Some files exceed the 10MB size limit",
         variant: "destructive",
       })
     }
@@ -160,9 +158,8 @@ export function UploadDropzone() {
           })
 
           setFileStatus("success")
-          toast({
+          Toast({
             title: "File uploaded successfully",
-            description: `${fileObj.name} has been uploaded and processed.`,
           })
         }, 2000)
       } else {
@@ -217,9 +214,8 @@ export function UploadDropzone() {
   // Remove file
   const removeFile = (id: string) => {
     setUploadedFiles((prev) => prev.filter((file) => file.id !== id))
-    toast({
+    Toast({
       title: "File removed",
-      description: "The file has been removed from the upload list.",
     })
   }
 
