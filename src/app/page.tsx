@@ -1,3 +1,4 @@
+import FeatureThree from '@/components/card-layout/feature-three'
 import FeaturesPage from '@/components/card-layout/features'
 import EcommercePage from '@/components/card-layout/features-two'
 import FeaturesSection from '@/components/card-layout/new-feature'
@@ -16,6 +17,7 @@ const page = () => {
           <FeaturesPage />
           <EcommercePage />
           <PricingCards />
+          <FeatureThree />
           <QueriesPage />
           <ContactSection />
           <Footer />

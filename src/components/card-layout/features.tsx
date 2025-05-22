@@ -1,4 +1,4 @@
-export default function FeaturesPage() {
+export default function FeaturOne() {
   return (
     <div>
       <section className="container bg-white mx-auto px-4 py-12 md:py-24">
@@ -23,11 +23,11 @@ export default function FeaturesPage() {
           </div>
 
           {/* Right Image */}
-          <div className="w-full md:w-1/2 relative flex justify-center">
+          <div className="w-full md:w-1/2 relative flex items-center justify-center ">
             <img
               src="./02.svg"
               alt="Illustration of summary and clarity"
-              className="max-w-full h-auto"
+              className="w-1/2 h-1/2"
             />
           </div>
         </div>

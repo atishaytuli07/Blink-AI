@@ -1,12 +1,8 @@
-export default function FeatureTwo() {
+export default function FeatureThree() {
   return (
     <div>
       <section className="container bg-white mx-auto px-4 py-12 md:py-24">
         <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start">
-          <div className="w-full md:w-1/2 relative flex items-center justify-center ">
-            <img src="/04.svg" alt="" className="w-1/2 h-1/2" />
-          </div>
-
           <div className="w-full md:w-1/2">
             <div className="inline-block bg-blue-500 rounded-full px-4 py-2 mb-6">
               <span className="font-semibold font-bm text-white">
@@ -29,6 +25,9 @@ export default function FeatureTwo() {
               boosts your productivity and helps you make informed decisions
               faster than ever before.
             </p>
+          </div>
+          <div className="w-full md:w-1/2 relative flex items-center justify-center ">
+            <img src="/01.svg" alt="" className="w-1/2 h-1/2" />
           </div>
         </div>
       </section>
